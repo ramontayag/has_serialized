@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 # Add dependencies required to use your gem here.
 # Example:
-gem "activerecord", ">= 3.0.0"
+gem "activerecord", "~> 3.1.0.rc"
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do
@@ -12,4 +12,5 @@ group :development do
   gem "guard-rspec"
   gem "libnotify"
   gem "sqlite3"
+  gem "arel", "2.1.4"
 end

@@ -25,7 +25,7 @@ module HasSerialized
         after_initialize method_name
 
         define_method(method_name) do
-          self[serialized] = accessors if self[serialized].nil?
+          self[serialized] = accessors if self[serialized].blank?
         end
       end
     end

@@ -1,11 +1,12 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+
 require 'rubygems'
 require 'active_record'
 require 'rspec'
 require 'has_serialized'
-require 'spec/fixtures/category'
-require 'spec/fixtures/page'
+require 'fixtures/category'
+require 'fixtures/page'
 
 #Allow to connect to SQLite
 root = File.expand_path(File.join(File.dirname(__FILE__), '..'))
