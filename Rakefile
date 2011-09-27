@@ -13,7 +13,7 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "has_serialized"
-  gem.homepage = "http://github.com/ramon.tayag/has_serialized"
+  gem.homepage = "http://github.com/ramontayag/has_serialized"
   gem.license = "MIT"
   gem.description = %q{Adds dynamic attributes through serialize. This way, it's in one table, and it's still trivial to track changes to your records.}
   gem.summary = %Q{Adds dynamic attributes through serialize.}
