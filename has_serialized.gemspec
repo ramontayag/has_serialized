@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{has_serialized}
-  s.version = "0.1.2"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ramon Tayag"]
-  s.date = %q{2011-08-13}
+  s.date = %q{2011-11-04}
   s.description = %q{Adds dynamic attributes through serialize. This way, it's in one table, and it's still trivial to track changes to your records.}
   s.email = %q{ramon@tayag.net}
   s.extra_rdoc_files = [
@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
     "spec/has_serialized_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/ramon.tayag/has_serialized}
+  s.homepage = %q{http://github.com/ramontayag/has_serialized}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}
