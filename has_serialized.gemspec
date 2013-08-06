@@ -3,9 +3,12 @@
 # Instead, edit Jeweler::Tasks in Rakefile, and run 'rake gemspec'
 # -*- encoding: utf-8 -*-
 
+$: << './lib'
+require 'has_serialized/version'
+
 Gem::Specification.new do |s|
   s.name = %q{has_serialized}
-  s.version = "0.1.3"
+  s.version = HasSerialized::VERSION
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ramon Tayag"]
