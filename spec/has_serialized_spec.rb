@@ -7,9 +7,6 @@ describe HasSerialized do
 
   describe "accessing variables" do
     before do
-      Page.class_eval do
-        has_serialized :dynamic_attributes, :gunslinger => true
-      end
       @page = Page.create!
     end
 
