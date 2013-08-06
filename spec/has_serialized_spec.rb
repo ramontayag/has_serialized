@@ -19,4 +19,9 @@ describe HasSerialized do
       @page.gunslinger.should be_false
     end
   end
+
+  it 'should be able to initialize with defaults' do
+    page = Page.new
+    expect(page.gunslinger).to be_true
+  end
 end
