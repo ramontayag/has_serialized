@@ -18,70 +18,20 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = [
     "README.textile"
   ]
-  s.files = [
-    ".autotest",
-    ".rvmrc",
-    "Gemfile",
-    "Gemfile.lock",
-    "Guardfile",
-    "MIT-LICENSE",
-    "README.textile",
-    "Rakefile",
-    "VERSION",
-    "has_serialized.gemspec",
-    "lib/has_serialized.rb",
-    "lib/has_serialized/class_methods.rb",
-    "spec/fixtures/category.rb",
-    "spec/fixtures/page.rb",
-    "spec/has_serialized_spec.rb",
-    "spec/spec_helper.rb"
-  ]
+  s.license = 'MIT'
+
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.require_paths = ["lib"]
+
   s.homepage = %q{http://github.com/ramontayag/has_serialized}
   s.licenses = ["MIT"]
-  s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}
   s.summary = %q{Adds dynamic attributes through serialize.}
-  s.test_files = [
-    "spec/fixtures/category.rb",
-    "spec/fixtures/page.rb",
-    "spec/has_serialized_spec.rb",
-    "spec/spec_helper.rb"
-  ]
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
-
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<activerecord>, ["~> 3.1.0.rc"])
-      s.add_development_dependency(%q<rspec>, ["~> 2.6.0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_development_dependency(%q<guard-rspec>, [">= 0"])
-      s.add_development_dependency(%q<libnotify>, [">= 0"])
-      s.add_development_dependency(%q<sqlite3>, [">= 0"])
-      s.add_development_dependency(%q<arel>, ["= 2.1.4"])
-    else
-      s.add_dependency(%q<activerecord>, ["~> 3.1.0.rc"])
-      s.add_dependency(%q<rspec>, ["~> 2.6.0"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<guard-rspec>, [">= 0"])
-      s.add_dependency(%q<libnotify>, [">= 0"])
-      s.add_dependency(%q<sqlite3>, [">= 0"])
-      s.add_dependency(%q<arel>, ["= 2.1.4"])
-    end
-  else
-    s.add_dependency(%q<activerecord>, ["~> 3.1.0.rc"])
-    s.add_dependency(%q<rspec>, ["~> 2.6.0"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-    s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<guard-rspec>, [">= 0"])
-    s.add_dependency(%q<libnotify>, [">= 0"])
-    s.add_dependency(%q<sqlite3>, [">= 0"])
-    s.add_dependency(%q<arel>, ["= 2.1.4"])
-  end
+  s.add_runtime_dependency 'activerecord', '>= 3.0.0'
+  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'rspec'
 end
 
