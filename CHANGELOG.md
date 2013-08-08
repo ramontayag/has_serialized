@@ -1,4 +1,4 @@
-# 1.0.1
+# 1.0.2
 
 - Allow attributes to be set during initialization
 - Adds support for multiple activerecord 3 versions
