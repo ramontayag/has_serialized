@@ -1,3 +1,7 @@
+# 1.1.1
+
+- Do not set default value if the value has already been set (even if it was set to nil)
+
 # 1.1.0
 
 - Create `getter?` methods for attributes with default boolean values

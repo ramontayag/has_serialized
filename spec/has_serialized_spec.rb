@@ -21,10 +21,11 @@ describe HasSerialized do
   end
 
   it 'should be able to override certain defaults during instantiation' do
-    page = Page.new(gunslinger: 'Roland', jake: false)
+    page = Page.new(gunslinger: 'Roland', jake: false, ka_tet: nil)
     expect(page.gunslinger).to eq('Roland')
     expect(page.lowmen).to be_true
     expect(page.jake).to eq(false)
+    expect(page.ka_tet).to be_nil
   end
 
   it 'should create getters that end with question marks for boolean fields' do

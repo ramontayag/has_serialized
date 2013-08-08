@@ -36,7 +36,7 @@ module HasSerialized
         define_method(method_name) do
           accessors.each do |key, default_value|
             self[serialized] ||= {}
-            if self[serialized][key].nil?
+            unless self[serialized].has_key?(key)
               self[serialized][key] = default_value
             end
           end
