@@ -20,8 +20,10 @@ describe HasSerialized do
     end
   end
 
-  it 'should be able to initialize with defaults' do
-    page = Page.new
-    expect(page.gunslinger).to be_true
+  it 'should be able to override certain defaults during instantiation' do
+    page = Page.new(gunslinger: 'Roland', jake: false)
+    expect(page.gunslinger).to eq('Roland')
+    expect(page.lowmen).to be_true
+    expect(page.jake).to eq(false)
   end
 end

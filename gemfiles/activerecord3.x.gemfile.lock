@@ -1,5 +1,5 @@
 PATH
-  remote: .
+  remote: /Users/dev/src/has_serialized
   specs:
     has_serialized (1.0.0)
       activerecord (~> 3.0)
@@ -42,6 +42,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord (~> 3.1)
   appraisal
   has_serialized!
   rspec

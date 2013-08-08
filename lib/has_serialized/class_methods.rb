@@ -14,6 +14,7 @@ module HasSerialized
             self[serialized] && self[serialized][k]
           end
           define_method("#{k}=") do |value|
+            self[serialized] ||= {}
             self[serialized][k] = value
           end
         end
@@ -25,7 +26,12 @@ module HasSerialized
         after_initialize method_name
 
         define_method(method_name) do
-          self[serialized] = accessors if self[serialized].blank?
+          accessors.each do |key, default_value|
+            self[serialized] ||= {}
+            if self[serialized][key].nil?
+              self[serialized][key] = default_value
+            end
+          end
         end
       end
     end
