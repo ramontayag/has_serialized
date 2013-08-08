@@ -15,9 +15,7 @@ Gem::Specification.new do |s|
   s.date = %q{2011-11-04}
   s.description = %q{Adds dynamic attributes through serialize. This way, it's in one table, and it's still trivial to track changes to your records.}
   s.email = %q{ramon@tayag.net}
-  s.extra_rdoc_files = [
-    "README.textile"
-  ]
+  s.extra_rdoc_files = %w(README.md)
   s.license = 'MIT'
 
   s.files         = `git ls-files`.split("\n")
