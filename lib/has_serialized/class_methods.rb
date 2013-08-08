@@ -8,11 +8,19 @@ module HasSerialized
       # Creates the accessors so that you can assign values like so:
       # record.my_own_attribute = value
       # record.my_own_attribute # value
+      # record.my_own_attribute? # if value is true of false
       def self.serialized_attr_accessor(serialized, accessors)
-        accessors.keys.each do |k|
+        accessors.each do |k, v|
           define_method("#{k}") do
             self[serialized] && self[serialized][k]
           end
+
+          if !!v == v
+            define_method("#{k}?") do
+              self[serialized] && self[serialized][k]
+            end
+          end
+
           define_method("#{k}=") do |value|
             self[serialized] ||= {}
             self[serialized][k] = value
@@ -22,7 +30,7 @@ module HasSerialized
 
       # Sets the default value of the serialized field
       def self.default_serialized_attr(serialized, accessors)
-        method_name =  "set_default_#{serialized}"
+        method_name = "set_default_#{serialized}"
         after_initialize method_name
 
         define_method(method_name) do
@@ -34,6 +42,7 @@ module HasSerialized
           end
         end
       end
+
     end
   end
 end
